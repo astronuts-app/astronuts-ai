@@ -1,6 +1,9 @@
 # action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Astronuts Code Quality Check'
+description: 'Run Astronuts code quality checks'
+branding:
+  icon: bar-chart-2
+  color: white
 inputs:
   who-to-greet:  # id of input
     description: 'Who to greet'
