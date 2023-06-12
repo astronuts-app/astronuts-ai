@@ -17,7 +17,7 @@ The time we greeted you.
 ## Example usage
 
 ```yaml
-uses: actions/astronuts-code-quality-action@v1
+uses: actions/astronuts-code-quality-action@v0.0.2-alpha
 with:
   who-to-greet: 'Mona the Octocat'
 ```
