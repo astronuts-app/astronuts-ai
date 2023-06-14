@@ -15,7 +15,7 @@ These are some of the supported input parameters of action.
 ## Example usage
 
 ```yaml
-uses: actions/astronuts-code-quality-action@v0.0.5-alpha
+uses: actions/astronuts-code-quality-action@v0.0.6-alpha
 with:
   projectKey: 'my-custom-project'
   authToken: ${{ secrets.ASTRONUTS_AUTH_TOKEN }}
