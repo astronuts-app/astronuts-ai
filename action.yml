@@ -1,21 +1,25 @@
-# action.yml
 name: 'Astronuts Code Quality Check'
 description: 'Run Astronuts code quality checks'
+author: "Astronuts Inc."
 branding:
   icon: bar-chart-2
   color: white
-#inputs:
-#  who-to-greet:  # id of input
-#    description: 'Who to greet'
-#    required: true
-#    default: 'World'
-#outputs:
-#  time: # id of output
-#    description: 'The time we greeted you'
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
-#  args:
-#    - ${{ inputs.who-to-greet }}
 
-
+inputs:
+  projectKey:
+    description: "The project's unique key."
+    required: true
+  sourceLanguage:
+    description: "The source code language."
+    required: true
+  authToken:
+    description: "The auth token"
+    required: true
+  rootDir:
+    description: "Root directory of project"
+    required: false
+    default: "/github/workspace"

@@ -1,9 +1,8 @@
 #!/bin/sh -l
 
-echo "Hello $1"
-time=$(date)
-echo "time=$time" >> $GITHUB_OUTPUT
+set -e
 
-cd /github/workspace || exit
-echo Listing files in workspace
-ls -al
+APP_OPTS=
+APP_OPTS="$APP_OPTS -Dspring.profiles.active=prod"
+
+java $APP_OPTS -jar /cq-scanner-app.jar -l="${INPUT_SOURCELANGUAGE}" -t="$INPUT_AUTHTOKEN" -k="${INPUT_PROJECTKEY}"

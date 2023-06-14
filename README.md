@@ -1,25 +1,27 @@
 # Astronuts Code Quality Action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+This action runs Astronuts code quality scans.
 
-## Inputs
+### Inputs
 
-## `who-to-greet`
+These are some of the supported input parameters of action.
 
-**Required** The name of the person to greet. Default `"World"`.
+- `projectKey` - **_(Required)_** the unique key of the project.
+- `authToken` - **_(Required)_** the Astronuts authentication token for your organization.
+- `language` - **_(Required)_** the programming language of teh source code to be analyzed.
+- `rootDir` - The root directory of source code.
 
-## Outputs
-
-## `time`
-
-The time we greeted you.
 
 ## Example usage
 
 ```yaml
-uses: actions/astronuts-code-quality-action@v0.0.4-alpha
-#with:
-#  who-to-greet: 'Mona the Octocat'
+uses: actions/astronuts-code-quality-action@v0.0.5-alpha
+with:
+  projectKey: 'my-custom-project'
+  authToken: ${{ secrets.ASTRONUTS_AUTH_TOKEN }}
+  language: 'java'
+  rootDir: 'my-root-dir'
+  
 ```
 
 
