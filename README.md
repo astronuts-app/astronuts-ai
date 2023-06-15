@@ -8,18 +8,18 @@ These are some of the supported input parameters of action.
 
 - `projectKey` - **_(Required)_** the unique key of the project.
 - `authToken` - **_(Required)_** the Astronuts authentication token for your organization.
-- `language` - **_(Required)_** the programming language of teh source code to be analyzed.
+- `sourceLanguage` - **_(Required)_** the programming language of teh source code to be analyzed.
 - `rootDir` - The root directory of source code.
 
 
 ## Example usage
 
 ```yaml
-uses: actions/astronuts-code-quality-action@v0.0.6-alpha
+uses: actions/astronuts-code-quality-action@v0.0.7-alpha
 with:
   projectKey: 'my-custom-project'
   authToken: ${{ secrets.ASTRONUTS_AUTH_TOKEN }}
-  language: 'java'
+  sourceLanguage: 'java'
   rootDir: 'my-root-dir'
   
 ```
