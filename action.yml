@@ -10,14 +10,8 @@ runs:
   image: 'Dockerfile'
 
 inputs:
-  projectKey:
-    description: "The project's unique key"
-    required: true
   sourceLanguage:
     description: "The source code language"
-    required: true
-  authToken:
-    description: "The auth token"
     required: true
   rootDir:
     description: "Root directory of project"
