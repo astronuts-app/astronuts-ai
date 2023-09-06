@@ -1,4 +1,4 @@
-name: 'Astronuts Code Quality Check'
+name: 'Astronuts Code Quality Action'
 description: 'Run Astronuts code quality checks'
 author: "Astronuts Inc."
 branding:
