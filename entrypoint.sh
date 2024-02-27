@@ -6,6 +6,13 @@ set -e
 JVM_OPTS="-Dspring.profiles.active=prod"
 APP_ARGS=""
 
+# Map GitHub environment variables to SCM_* variables
+export SCM_REPOSITORY_FULL_NAME="$GITHUB_REPOSITORY"
+export SCM_REPOSITORY_OWNER="$GITHUB_REPOSITORY_OWNER"
+export SCM_REF_NAME="$GITHUB_REF_NAME"
+export SCM_REF_TYPE="$GITHUB_REF_TYPE"
+export SCM_COMMIT_SHA="$GITHUB_SHA"
+
 if [ "$INPUT_FAILONERROR" = "true" ]; then
     APP_ARGS="$APP_ARGS -f"
 fi
