@@ -21,7 +21,7 @@ These are some of the supported input parameters of the action.
 ## Example usage
 
 ```yaml
-uses: actions/astronuts-code-quality-action@v2
+uses: actions/astronuts-code-quality-action@v3
 with:
   sourceLanguage: 'java'
 ```
