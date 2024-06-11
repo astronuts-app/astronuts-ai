@@ -9,9 +9,17 @@ APP_ARGS=""
 # Map GitHub environment variables to SCM_* variables
 export SCM_REPOSITORY_FULL_NAME="$GITHUB_REPOSITORY"
 export SCM_REPOSITORY_OWNER="$GITHUB_REPOSITORY_OWNER"
-export SCM_REF_NAME="$GITHUB_REF_NAME"
 export SCM_REF_TYPE="$GITHUB_REF_TYPE"
 export SCM_COMMIT_SHA="$GITHUB_SHA"
+
+# Set SCM_REF_NAME based on GITHUB_EVENT_NAME
+if [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
+    export SCM_REF_NAME="$GITHUB_HEAD_REF"
+elif [ "$GITHUB_EVENT_NAME" = "push" ]; then
+    export SCM_REF_NAME="$GITHUB_REF_NAME"
+else
+    export SCM_REF_NAME="$GITHUB_REF_NAME"
+fi
 
 if [ "$INPUT_FAILONERROR" = "true" ]; then
     APP_ARGS="$APP_ARGS -f"
