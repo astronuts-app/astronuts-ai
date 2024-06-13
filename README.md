@@ -13,16 +13,21 @@ These are some of the supported input parameters of the action.
 
 ### Supported Languages
 - `java`
+- `typescript`
+- `javascript`
+- `python`
 
 ### Supported Build Tools
 - `gradle`
 - `maven`
+- `npm`
 
 ## Example usage
 
 ```yaml
-uses: actions/astronuts-code-quality-action@v3
+uses: actions/astronuts-code-quality-action@v4
 with:
   sourceLanguage: 'java'
+  buildSystem: 'gradle'
 ```
 
