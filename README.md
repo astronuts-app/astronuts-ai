@@ -13,16 +13,26 @@ These are some of the supported input parameters of the action.
 
 ### Supported Languages
 - `java`
+- `typescript`
+- `javascript`
+- `python`
 
 ### Supported Build Tools
 - `gradle`
 - `maven`
+- `npm`
+- `pip`
+
+Note: If the build system is not specified, the action will attempt to auto-detect it. Currently, only one build system 
+per repository is supported. If your repository utilizes multiple build systems or tools, it is recommended to explicitly 
+specify the build system for which you wish to run the Astronuts code quality action to ensure accurate analysis.
 
 ## Example usage
 
 ```yaml
-uses: actions/astronuts-code-quality-action@v3
+uses: actions/astronuts-code-quality-action@v4
 with:
   sourceLanguage: 'java'
+  buildSystem: 'gradle'
 ```
 
