@@ -21,6 +21,7 @@ These are some of the supported input parameters of the action.
 - `gradle`
 - `maven`
 - `npm`
+- `pip`
 
 ## Example usage
 
