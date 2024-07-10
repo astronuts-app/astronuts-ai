@@ -31,6 +31,6 @@ auto-detection system to detect that.
 ## Example usage
 
 ```yaml
-uses: actions/astronuts-code-quality-action@v4
+uses: actions/astronuts-code-quality-action@v5
 ```
 
