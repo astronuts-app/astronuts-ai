@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM astronutsapp/hubble-scanner:latest
+FROM astronutsapp/hubble-scanner:signup-flow-revamp
 
 LABEL "com.github.actions.name"="Astronuts Code Quality Check"
 LABEL "com.github.actions.description"="Run Astronuts code quality checks."
