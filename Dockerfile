@@ -11,14 +11,6 @@ LABEL repository="https://github.com/astronuts-app/astronuts-code-quality-action
 LABEL homepage="https://www.astronuts.io"
 LABEL maintainer="astronuts-app"
 
-# Install git
-RUN apt-get update && apt-get install -y git
-
-# Copy the entrypoint script
 COPY entrypoint.sh /entrypoint.sh
-
-# Make the entrypoint script executable
 RUN chmod +x /entrypoint.sh
-
-# Set the entrypoint
 ENTRYPOINT ["/entrypoint.sh"]
