@@ -10,17 +10,14 @@ APP_ARGS=""
 export SCM_REPOSITORY_FULL_NAME="$GITHUB_REPOSITORY"
 export SCM_REPOSITORY_OWNER="$GITHUB_REPOSITORY_OWNER"
 export SCM_REF_TYPE="$GITHUB_REF_TYPE"
+export SCM_COMMIT_SHA="$GITHUB_SHA"
 
-# Set SCM_REF_NAME and get last commit SHA for pull request events
+# Set SCM_REF_NAME based on GITHUB_EVENT_NAME
+# Set SCM_REF_NAME based on GITHUB_EVENT_NAME
 if [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
     export SCM_REF_NAME="$GITHUB_HEAD_REF"
-    # Fetch the latest commit SHA for the pull request branch
-    export SCM_COMMIT_SHA=$(git rev-parse origin/"$GITHUB_HEAD_REF")
 elif [ "$GITHUB_EVENT_NAME" = "push" ]; then
     export SCM_REF_NAME="$GITHUB_REF_NAME"
-    export SCM_COMMIT_SHA="$GITHUB_SHA"  # Use the default SHA for push events
-else
-    export SCM_COMMIT_SHA="$GITHUB_SHA"  # Default fallback
 fi
 
 if [ "$INPUT_FAILONERROR" = "true" ]; then
