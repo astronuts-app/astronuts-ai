@@ -12,7 +12,6 @@ export SCM_REPOSITORY_OWNER="$GITHUB_REPOSITORY_OWNER"
 export SCM_REF_TYPE="$GITHUB_REF_TYPE"
 export SCM_COMMIT_SHA="$GITHUB_SHA"
 
-# Set SCM_REF_NAME and get last commit SHA for pull request events
 if [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
     export SCM_REF_NAME="$GITHUB_HEAD_REF"
 elif [ "$GITHUB_EVENT_NAME" = "push" ]; then
