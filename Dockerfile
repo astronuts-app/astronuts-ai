@@ -10,6 +10,10 @@ LABEL version="0.0.1"
 LABEL repository="https://github.com/astronuts-app/astronuts-code-quality-action"
 LABEL homepage="https://www.astronuts.io"
 LABEL maintainer="astronuts-app"
+# Copy the entrypoint script into the image
+COPY entrypoint.sh /entrypoint.sh
 
+# Ensure the entrypoint script has execute permissions
+RUN chmod +x /entrypoint.sh
 # Set the entrypoint
 ENTRYPOINT ["/entrypoint.sh"]
