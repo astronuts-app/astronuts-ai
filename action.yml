@@ -1,4 +1,4 @@
-name: 'Astronuts AI'
+name: 'Astronuts AI Action'
 description: 'This action runs Astronuts code quality checks on your repositories.'
 author: "Astronuts, Inc."
 branding:
