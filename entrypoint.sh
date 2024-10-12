@@ -17,9 +17,17 @@ if [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
 elif [ "$GITHUB_EVENT_NAME" = "push" ]; then
     export SCM_REF_NAME="$GITHUB_REF_NAME"
 fi
-
 if [ "$INPUT_FAILONERROR" = "true" ]; then
     APP_ARGS="$APP_ARGS -f"
+fi
+if [ -n "$INPUT_PRREVIEW" ]; then
+    APP_ARGS="$APP_ARGS --prReview=$INPUT_PRREVIEW"
+fi
+if [ -n "$INPUT_TIMEOUT" ]; then
+    APP_ARGS="$APP_ARGS --timeout=$INPUT_TIMEOUT"
+fi
+if [ -n "$INPUT_SERVERURL" ]; then
+    APP_ARGS="$APP_ARGS --serverUrl=$INPUT_SERVERURL"
 fi
 
 # Append remaining application arguments
