@@ -21,10 +21,13 @@ inputs:
     required: false
   pr-review:
     description: "PR review for Pull Request"
+    required: false
   prWalkthrough:
     description: "PR walkthrough for Pull Request"
+    required: false
   staticAnalysis:
     description: "Static Analysis for Pull Request Analysis"
+    required: false
 
 #  sourceLanguage:
 #    description: "The source code language"
