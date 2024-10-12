@@ -19,12 +19,15 @@ inputs:
   serverUrl:
     description: "Server URL override for internal use only. Not for end user usage."
     required: false
-  prReview:
+  pr-review:
     description: "PR review for Pull Request"
+    required: false
   prWalkthrough:
     description: "PR walkthrough for Pull Request"
+    required: false
   staticAnalysis:
     description: "Static Analysis for Pull Request Analysis"
+    required: false
 
 #  sourceLanguage:
 #    description: "The source code language"
