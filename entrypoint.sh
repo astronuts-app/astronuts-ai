@@ -23,7 +23,7 @@ if [ "$INPUT_FAILONERROR" = "true" ]; then
 fi
 
 # Append remaining application arguments
-APP_ARGS="$APP_ARGS -v=GitHub -t=${INPUT_TOKEN} -z=${INPUT_TIMEOUT} -u=${INPUT_SERVERURL}"
+APP_ARGS="$APP_ARGS -v=GitHub -t=${INPUT_TOKEN}"
 
 # Construct the full command with JVM options and application arguments
 CMD="java $JVM_OPTS -jar /hubble-scanner.jar $APP_ARGS"
