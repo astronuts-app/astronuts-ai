@@ -13,8 +13,11 @@ LABEL homepage="https://www.astronuts.io"
 LABEL maintainer="astronuts-app"
 
 # Install yq using apt package manager
+# Install snapd for snap package management
 RUN apt-get update && \
-    apt-get install -y yq
+    apt-get install -y snapd && \
+    snap install core && \
+    snap install yq
 # Copy the entrypoint script into the image
 COPY entrypoint.sh /entrypoint.sh
 
