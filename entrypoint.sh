@@ -21,6 +21,9 @@ fi
 echo "PR_REVIEW: $INPUT_PR_REVIEW"
 echo "PR_WALKTHROUGH: $INPUT_PR_WALKTHROUGH"
 echo "STATIC_ANALYSIS: $INPUT_STATIC_ANALYSIS"
+echo "prReview": $INPUT_PRREVIEW
+echo "prWalkthrough": $INPUT_PRWALKTHROUGHALYSIS
+
 
 # Handle GitHub Action inputs
 if [ "$INPUT_FAILONERROR" = "true" ]; then
