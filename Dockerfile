@@ -12,12 +12,6 @@ LABEL repository="https://github.com/astronuts-app/astronuts-code-quality-action
 LABEL homepage="https://www.astronuts.io"
 LABEL maintainer="astronuts-app"
 
-# Install yq for YAML parsing
-RUN apt-get update && \
-    apt-get install -y wget && \
-    wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq && \
-    chmod +x /usr/bin/yq \
-
 # Copy the entrypoint script into the image
 COPY entrypoint.sh /entrypoint.sh
 
