@@ -25,15 +25,15 @@ if [ "$INPUT_FAILONERROR" = "true" ]; then
 fi
 
 # Process each input argument and add to APP_ARGS
-if [ -n "$INPUT_PRREVIEW" ]; then
+if [ -n "$INPUT_PR_REVIEW" ]; then
     APP_ARGS="$APP_ARGS --pr-review=$INPUT_PR_REVIEW"
 fi
 
-if [ -n "$INPUT_PRWALKTHROUGH" ]; then
+if [ -n "$INPUT_PR_WALKTHROUGH" ]; then
     APP_ARGS="$APP_ARGS --pr-walkthrough=$INPUT_PR_WALKTHROUGH"
 fi
 
-if [ -n "$INPUT_STATICANALYSIS" ]; then
+if [ -n "$INPUT_STATIC_ANALYSIS" ]; then
     APP_ARGS="$APP_ARGS --static-analysis=$INPUT_STATIC_ANALYSIS"
 fi
 
