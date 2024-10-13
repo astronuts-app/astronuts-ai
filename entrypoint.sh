@@ -18,6 +18,9 @@ if [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
 elif [ "$GITHUB_EVENT_NAME" = "push" ]; then
     export SCM_REF_NAME="$GITHUB_REF_NAME"
 fi
+echo "PR_REVIEW: $INPUT_PR_REVIEW"
+echo "PR_WALKTHROUGH: $INPUT_PR_WALKTHROUGH"
+echo "STATIC_ANALYSIS: $INPUT_STATIC_ANALYSIS"
 
 # Handle GitHub Action inputs
 if [ "$INPUT_FAILONERROR" = "true" ]; then
