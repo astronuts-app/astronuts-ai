@@ -26,15 +26,15 @@ fi
 
 # Process each input argument and add to APP_ARGS
 if [ -n "$INPUT_PRREVIEW" ]; then
-    APP_ARGS="$APP_ARGS --pr-review=$INPUT_PRREVIEW"
+    APP_ARGS="$APP_ARGS --prReview=$INPUT_PRREVIEW"
 fi
 
 if [ -n "$INPUT_PRWALKTHROUGH" ]; then
-    APP_ARGS="$APP_ARGS --pr-walkthrough=$INPUT_PRWALKTHROUGH"
+    APP_ARGS="$APP_ARGS --prWalkthrough=$INPUT_PRWALKTHROUGH"
 fi
 
 if [ -n "$INPUT_STATICANALYSIS" ]; then
-    APP_ARGS="$APP_ARGS --static-analysis=$INPUT_STATICANALYSIS"
+    APP_ARGS="$APP_ARGS --staticAnalysis=$INPUT_STATICANALYSIS"
 fi
 
 if [ -n "$INPUT_TIMEOUT" ]; then
