@@ -11,6 +11,10 @@ LABEL version="0.0.1"
 LABEL repository="https://github.com/astronuts-app/astronuts-code-quality-action"
 LABEL homepage="https://www.astronuts.io"
 LABEL maintainer="astronuts-app"
+
+# Install yq using apt package manager
+RUN apt-get update && \
+    apt-get install -y yq
 # Copy the entrypoint script into the image
 COPY entrypoint.sh /entrypoint.sh
 

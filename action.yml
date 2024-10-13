@@ -28,6 +28,32 @@ inputs:
   staticAnalysis:
     description: "Static Analysis for Pull Request Analysis"
     required: false
+  configFilePath:
+    description: "Path to the configuration file"
+    required: false
+    default: "./settings.yml"
+  rootDir:
+      description: "Root directory of the project"
+      required: false
+      default: "./"
+  failOnError:
+      description: "Fail the build on error"
+      required: false
+  language:
+      description: "Programming language of the project"
+      required: false
+  buildSystem:
+      description: "The build system used for the project"
+      required: false
+  testReportsRoot:
+      description: "Root directory for test reports"
+      required: false
+  coverageLib:
+      description: "Code coverage library"
+      required: false
+  coverageReportPaths:
+      description: "Paths to code coverage reports"
+      required: false
 
 #  sourceLanguage:
 #    description: "The source code language"
