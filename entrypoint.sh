@@ -18,12 +18,6 @@ if [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
 elif [ "$GITHUB_EVENT_NAME" = "push" ]; then
     export SCM_REF_NAME="$GITHUB_REF_NAME"
 fi
-echo "PR_REVIEW: $INPUT_PR_REVIEW"
-echo "PR_WALKTHROUGH: $INPUT_PR_WALKTHROUGH"
-echo "STATIC_ANALYSIS: $INPUT_STATIC_ANALYSIS"
-echo "prReview": $INPUT_PRREVIEW
-echo "prWalkthrough": $INPUT_PRWALKTHROUGHALYSIS
-
 
 # Handle GitHub Action inputs
 if [ "$INPUT_FAILONERROR" = "true" ]; then
@@ -31,16 +25,16 @@ if [ "$INPUT_FAILONERROR" = "true" ]; then
 fi
 
 # Process each input argument and add to APP_ARGS
-if [ -n "$INPUT_PR_REVIEW" ]; then
-    APP_ARGS="$APP_ARGS --pr-review=$INPUT_PR_REVIEW"
+if [ -n "$INPUT_PRREVIEW" ]; then
+    APP_ARGS="$APP_ARGS --pr-review=$INPUT_PRREVIEW"
 fi
 
-if [ -n "$INPUT_PR_WALKTHROUGH" ]; then
-    APP_ARGS="$APP_ARGS --pr-walkthrough=$INPUT_PR_WALKTHROUGH"
+if [ -n "$INPUT_PRWALKTHROUGH" ]; then
+    APP_ARGS="$APP_ARGS --pr-walkthrough=$INPUT_PRWALKTHROUGH"
 fi
 
-if [ -n "$INPUT_STATIC_ANALYSIS" ]; then
-    APP_ARGS="$APP_ARGS --static-analysis=$INPUT_STATIC_ANALYSIS"
+if [ -n "$INPUT_STATICANALYSIS" ]; then
+    APP_ARGS="$APP_ARGS --static-analysis=$INPUT_STATICANALYSIS"
 fi
 
 if [ -n "$INPUT_TIMEOUT" ]; then
