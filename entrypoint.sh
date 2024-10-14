@@ -20,8 +20,26 @@ elif [ "$GITHUB_EVENT_NAME" = "push" ]; then
     export SCM_REF_NAME="$GITHUB_REF_NAME"
 fi
 
+# Handle GitHub Action inputs
 if [ "$INPUT_FAILONERROR" = "true" ]; then
     APP_ARGS="$APP_ARGS -f"
+fi
+
+# Process each input argument and add to APP_ARGS
+if [ -n "$INPUT_PRREVIEW" ]; then
+    APP_ARGS="$APP_ARGS --prReview=$INPUT_PRREVIEW"
+fi
+
+if [ -n "$INPUT_PRWALKTHROUGH" ]; then
+    APP_ARGS="$APP_ARGS --prWalkthrough=$INPUT_PRWALKTHROUGH"
+fi
+
+if [ -n "$INPUT_STATICANALYSIS" ]; then
+    APP_ARGS="$APP_ARGS --staticAnalysis=$INPUT_STATICANALYSIS"
+fi
+
+if [ -n "$INPUT_TIMEOUT" ]; then
+    APP_ARGS="$APP_ARGS --timeout=$INPUT_TIMEOUT"
 fi
 
 # Append remaining application arguments

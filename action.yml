@@ -1,4 +1,4 @@
-name: 'Astronuts Code Quality Action'
+name: 'Astronuts AI Action'
 description: 'This action runs Astronuts code quality checks on your repositories.'
 author: "Astronuts, Inc."
 branding:
@@ -16,6 +16,18 @@ inputs:
   timeout:
     description: "duration after which this github action will end if not completed"
     required: false
+  serverUrl:
+    description: "Server URL override for internal use only. Not for end user usage."
+    required: false
+  prReview:
+    description: "PR review for Pull Request"
+    required: false
+  prWalkthrough:
+    description: "PR walkthrough for Pull Request"
+    required: false
+  staticAnalysis:
+    description: "Static Analysis for Pull Request Analysis"
+    required: false
 
 #  sourceLanguage:
 #    description: "The source code language"
@@ -30,6 +42,4 @@ inputs:
 #  failOnError:
 #    description: "If set to true, the build will fail if the code quality analysis fails. Build will pass silently otherwise."
 #    required: false
-#  serverUrl:
-#    description: "Server URL override for internal use only. Not for end user usage."
-#    required: false
+
