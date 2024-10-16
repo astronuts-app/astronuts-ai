@@ -90,3 +90,5 @@ Here is how to configure the GitHub Action to run Astronuts AI code quality chec
      prReview: true
      prWalkthrough: true
      staticAnalysis: true
+```
+For more information, visit the [Astronuts AI GitHub Action Marketplace](https://github.com/marketplace/actions/astronuts-ai-action).
