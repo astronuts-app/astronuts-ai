@@ -47,13 +47,13 @@ static-analysis:
     - coverage
     - complexity
 
-  source-language: java                 # Set the source language (e.g., java, typescript, etc.)
+  source-language: java                
   root-dir: "./src"                     # Root directory for the source code
-  build-system: gradle                  # Build tool used for the project (e.g., gradle, maven, npm)
+  build-system: gradle                  
   fail-on-error: true                   # If true, the action will fail if any error occurs
-  test-report-root: "./build/test-results/test" # Path to test report directories
-  coverage-lib: "jacoco"                # Code coverage library used (e.g., jacoco, cobertura)
-  coverage-report-paths: "build/reports/jacoco/test/jacocoTestReport.xml"  # Comma-separated list of coverage report paths
+  test-report-root: "./build/test-results/test" 
+  coverage-lib: "jacoco"               
+  coverage-report-paths: "build/reports/jacoco/test" 
 ```
 
 ### Supported Languages
