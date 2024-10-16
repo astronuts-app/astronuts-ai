@@ -47,12 +47,12 @@ static-analysis:
     - coverage
     - complexity
 
-  source-language: java                
-  root-dir: "./src"                     # Root directory for the source code
-  build-system: gradle                  
-  fail-on-error: true                   # If true, the action will fail if any error occurs
+  source-language: java
+  root-dir: "./src"
+  build-system: gradle
+  fail-on-error: true
   test-report-root: "./build/test-results/test" 
-  coverage-lib: "jacoco"               
+  coverage-lib: "jacoco"
   coverage-report-paths: "build/reports/jacoco/test" 
 ```
 
