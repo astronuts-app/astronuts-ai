@@ -83,7 +83,7 @@ Here is how to configure the GitHub Action to run Astronuts AI code quality chec
 
 ```yaml
  - name: Run Astronuts Code Quality Checks
-   uses: astronuts-app/astronuts-ai@v2.3.0
+   uses: astronuts-app/astronuts-ai@v2.5.1
    with:
      token: ${{ secrets.GITHUB_TOKEN }}
      timeout: 29000
