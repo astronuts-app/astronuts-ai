@@ -12,11 +12,11 @@ These are the supported input parameters of the action:
 - `prWalkthrough` - _(Optional)_ Whether to enable PR walkthrough functionality.
 - `staticAnalysis` - _(Optional)_ Whether to enable static code analysis.
 
-### Configuration Through `astronuts.yml`
+### Configuration Through `astronuts.yaml`
 
 All project-specific configurations such as directories, language, build system, and report paths should be provided via an `astronuts.yml` file. This file should be placed in the root of your repository, and it will be automatically detected during the action run.
 
-Here are the configuration options that should be specified in the `astronuts.yml` file:
+Here are the configuration options that should be specified in the `astronuts.yaml` file:
 
 - `source-language` - The programming language used in the source code (e.g., java, typescript, etc.).
 - `root-dir` - The root directory of your source code.
