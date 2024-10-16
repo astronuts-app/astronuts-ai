@@ -55,7 +55,7 @@ if [ -n "$INPUT_SERVERURL" ]; then
 fi
 
 # Construct the full command with JVM options and application arguments
-CMD="java $JVM_OPTS -jar /hubble-scanner.jar $APP_ARGS"
+CMD="java $JVM_OPTS -jar /hubble-scanner.jar $APP_ARGS -v=GitHub"
 
 # Execute the command
 eval "$CMD"
