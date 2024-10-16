@@ -1,6 +1,6 @@
 # Astronuts AI Code Quality Action
 
-This action runs Astronuts code quality scans on your repository. The action integrates static code analysis, PR review, and walkthrough capabilities, using configurable settings defined in an `astronuts.yml` file.
+This action runs Astronuts code quality scans on your repository. The action integrates static code analysis, PR review, and walkthrough capabilities, using configurable settings defined in an `astronuts.yaml` file.
 
 ### Inputs
 
@@ -26,7 +26,7 @@ Here are the configuration options that should be specified in the `astronuts.ya
 - `coverage-lib` - The code coverage library used in your project (e.g., jacoco, cobertura).
 - `coverage-report-paths` - A comma-separated list of paths to your code coverage report files.
 
-### Example of `astronuts.yml` Configuration
+### Example of `astronuts.yaml` Configuration
 
 ```yaml
 pr-analysis:
