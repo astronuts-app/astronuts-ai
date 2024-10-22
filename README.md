@@ -12,10 +12,20 @@ These are the supported input parameters of the action:
 - `prWalkthrough` - _(Optional)_ Whether to enable PR walkthrough functionality.
 - `staticAnalysis` - _(Optional)_ Whether to enable static code analysis.
 
+### Required Workflow Permissions
+
+Add these permissions to your workflow file before executing the action (required):
+
+```yaml
+permissions:
+  contents: read
+  pull-requests: write
+  ```
+
 ### Configuration Through `astronuts.yaml`
 
 All project-specific configurations such as directories, language, build system, and report paths should be provided via an `astronuts.yml` file. This file should be placed in the root of your repository, and it will be automatically detected during the action run.
-
+Keep this file in root directory of  your project.
 Here are the configuration options that should be specified in the `astronuts.yaml` file:
 
 - `source-language` - The programming language used in the source code (e.g., java, typescript, etc.).
@@ -41,12 +51,6 @@ pr-analysis:
   remove-outdated-comments: true
 
 static-analysis:
-  metrics:
-    - bugs
-    - code_smells
-    - coverage
-    - complexity
-
   source-language: java
   root-dir: "./src"
   build-system: gradle
@@ -55,6 +59,7 @@ static-analysis:
   coverage-lib: "jacoco"
   coverage-report-paths: "build/reports/jacoco/test" 
 ```
+> **Note**: The `astronuts.yaml` file and its configurations are optional. If not provided, default settings will be used for the code quality analysis. However, you can include the `pr-analysis` and `static-analysis` blocks if you wish to customize PR analysis or static code analysis settings.
 
 ### Supported Languages
 
@@ -80,13 +85,17 @@ static-analysis:
 ### Example Usage in GitHub Actions
 
 Here is how to configure the GitHub Action to run Astronuts AI code quality checks:
-
+```yaml
+permissions:
+  contents: read
+  pull-requests: write
+```
 ```yaml
  - name: Run Astronuts Code Quality Checks
    uses: astronuts-app/astronuts-ai@v2.5.1
    with:
      token: ${{ secrets.GITHUB_TOKEN }}
-     timeout: 29000
+     timeout: 60000
      prReview: true
      prWalkthrough: true
      staticAnalysis: true
