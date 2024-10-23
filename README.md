@@ -91,7 +91,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  code_quality_checks:
+  Build:
     runs-on: ubuntu-latest
     steps:
       - name: Run Astronuts Code Quality Checks
