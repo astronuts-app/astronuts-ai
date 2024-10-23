@@ -89,14 +89,17 @@ Here is how to configure the GitHub Action to run Astronuts AI code quality chec
 permissions:
   contents: read
   pull-requests: write
-```
-```yaml
- - name: Run Astronuts Code Quality Checks
-   uses: astronuts-app/astronuts-ai@v2.5.1
-   with:
-     token: ${{ secrets.GITHUB_TOKEN }}
-     timeout: 60000
-     prReview: true
-     prWalkthrough: true
-     staticAnalysis: true
+
+jobs:
+  code_quality_checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Astronuts Code Quality Checks
+        uses: astronuts-app/astronuts-ai@v2.5.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          timeout: 60000
+          prReview: true
+          prWalkthrough: true
+          staticAnalysis: true
 ```
