@@ -85,6 +85,7 @@ static-analysis:
 ### Example Usage in GitHub Actions
 
 Here is how to configure the GitHub Action to run Astronuts AI code quality checks:
+
 ```yaml
 permissions:
   contents: read
