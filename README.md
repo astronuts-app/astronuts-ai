@@ -1,13 +1,42 @@
 # Astronuts AI Code Quality Action
 
-This action runs Astronuts code quality scans on your repository. The action integrates static code analysis, PR review, and walkthrough capabilities, using configurable settings defined in an `astronuts.yaml` file.
+
+This action performs comprehensive code quality scans on your repository, integrating static analysis, PR review, 
+and interactive walkthrough features.
+
+### GitHub Actions Configuration Example
+
+Get started instantly by adding this configuration to your GitHub Actions workflow file; no additional setup required:
+
+```yaml
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Astronuts Code Quality Checks
+        uses: astronuts-app/astronuts-ai@v3.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          prReview: true
+          prWalkthrough: true
+          staticAnalysis: true
+```          
+> **Note:** To enable all features for your pull requests, make sure to include this trigger in your workflow:
+```yaml
+on:
+  pull_request:
+    branches:
+      - main
+
+```
 
 ### Inputs
-
 These are the supported input parameters of the action:
-
 - `token` - The GitHub token (required).
-- `timeout` - _(Optional)_ The timeout for the code quality scan in milliseconds.
 - `prReview` - _(Optional)_ Whether to enable PR review functionality.
 - `prWalkthrough` - _(Optional)_ Whether to enable PR walkthrough functionality.
 - `staticAnalysis` - _(Optional)_ Whether to enable static code analysis.
@@ -81,25 +110,3 @@ static-analysis:
 - `cobertura`
 
 > **Note**: We only support coverage and test reports in XML format.
-
-### Example Usage in GitHub Actions
-
-Here is how to configure the GitHub Action to run Astronuts AI code quality checks:
-```yaml
-permissions:
-  contents: read
-  pull-requests: write
-
-jobs:
-  Build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run Astronuts Code Quality Checks
-        uses: astronuts-app/astronuts-ai@v2.5.1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          timeout: 60000
-          prReview: true
-          prWalkthrough: true
-          staticAnalysis: true
-```
